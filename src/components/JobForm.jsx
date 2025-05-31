@@ -31,12 +31,12 @@ const JobForm = ({ onClose }) => {
   return (
     <div>
       {/* Header */}
-      <div className="flex justify-center items-center mb-3">
+      <div className="flex justify-center items-center mb-5">
         <h2 className="text-2xl font-semibold text-gray-800">Create Job Opening</h2>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-1">
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           {/* Job Title */}

@@ -47,8 +47,7 @@ function App() {
               p: 4,
               borderRadius: 2,
               outline: 'none',
-              overflow: 'hidden', // prevents external scroll
-
+              
             }}
           >
             <JobForm onClose={closeModal} />
