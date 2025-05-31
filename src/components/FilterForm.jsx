@@ -46,11 +46,11 @@ const FilterForm = ({ onFilter }) => {
             {...register('location')}
             className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
           >
-            <option value="">Preferred Location</option>
-            <option value="Remote">Remote</option>
-            <option value="New York">New York</option>
-            <option value="San Francisco">San Francisco</option>
-            <option value="London">London</option>
+            <option value="" disable selected>Choose Preferred Location</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Hydrabad">Hydrabad</option>
             <option value="Bangalore">Bangalore</option>
           </select>
         </div>
@@ -64,11 +64,11 @@ const FilterForm = ({ onFilter }) => {
             {...register('jobType')}
             className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
           >
-            <option value="">Job Type</option>
+            <option value="" disble selected>Full-time</option>
+            <option value="Internship">Internship</option>
             <option value="Full-time">Full-time</option>
             <option value="Part-time">Part-time</option>
             <option value="Contract">Contract</option>
-            <option value="Internship">Internship</option>
           </select>
         </div>
 
