@@ -29,14 +29,14 @@ const JobForm = ({ onClose }) => {
   };
 
   return (
-    <div className="p-2">
+    <div>
       {/* Header */}
       <div className="flex justify-center items-center mb-8">
         <h2 className="text-2xl font-semibold text-gray-800">Create Job Opening</h2>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           {/* Job Title */}
@@ -159,14 +159,14 @@ const JobForm = ({ onClose }) => {
         </div>
 
         {/* Buttons */}
-        <div className="flex justify-between space-x-4 mt-8">
+        <div className="flex justify-between space-x-4 mt-6">
           <button
             type="button"
             onClick={onClose}
             className="px-6 py-2 text-gray-700 border rounded-lg shadow-sm hover:bg-gray-200"
           >
             <span className='flex items-center gap-1'>
-              Save as Draft <FaAngleDoubleDown />
+              Save Draft <FaAngleDoubleDown />
             </span>
           </button>
 
