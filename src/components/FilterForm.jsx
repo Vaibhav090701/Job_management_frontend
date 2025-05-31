@@ -75,9 +75,9 @@ const FilterForm = ({ onFilter }) => {
         <div className="border-l border-gray-300 h-8"></div>
 
         {/* Salary Range Slider */}
-        <div className="flex items-center space-x-5 px-10 flex-1">
+        <div className="flex items-center space-x-4 px-7 flex-1">
           <div className="w-full">
-            <div className="flex justify-between items-center space-x-2 mb-5">
+            <div className="flex justify-between items-center space-x-2  mb-5">
               <label className="text-black font-bold">Salary Per Month</label>
               <span className="text-gray-600">{formatSalaryRange(salaryRange)}</span>
             </div>
