@@ -46,7 +46,7 @@ const FilterForm = ({ onFilter }) => {
             {...register('location')}
             className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
           >
-            <option value="" disable selected>Choose Preferred Location</option>
+            <option value="" disable selected>Preferred Location</option>
             <option value="Chennai">Chennai</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Pune">Pune</option>
@@ -64,7 +64,7 @@ const FilterForm = ({ onFilter }) => {
             {...register('jobType')}
             className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
           >
-            <option value="" disble selected>Full-time</option>
+            <option value="" disble selected>Job Type</option>
             <option value="Internship">Internship</option>
             <option value="Full-time">Full-time</option>
             <option value="Part-time">Part-time</option>
