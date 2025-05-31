@@ -12,7 +12,6 @@ const FilterForm = ({ onFilter }) => {
   useEffect(() => {
     const subscription = watch((formData) => {
       const filterData = { ...formData, salaryRange: `${salaryRange[0]}-${salaryRange[1]}` };
-      console.log('Filter data being sent:', filterData);
       onFilter(filterData);
     });
 

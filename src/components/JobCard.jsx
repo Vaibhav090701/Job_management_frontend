@@ -28,7 +28,6 @@ const JobCard = ({ job }) => {
           src={getCompanyLogo(job.companyName)}
           alt={`${job.companyName} logo`}
           className="w-16 h-16 object-contain"
-          // onError={(e) => (e.target.src = 'https://logo.clearbit.com/example.com')} // Fallback on error
         />
       </div>
 
@@ -43,7 +42,6 @@ const JobCard = ({ job }) => {
         <div className="flex items-center space-x-2">
           <FaBriefcase className="text-gray-500" />
             <span>{!job.requirements || job.requirements === "0" ? "Entry level" : job.requirements}</span>
-
         </div>
         <div className="flex items-center space-x-2">
           <FaMapMarkerAlt className="text-gray-500" />

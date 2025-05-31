@@ -18,10 +18,8 @@ const JobForm = ({ onClose }) => {
       applicationDeadline: deadline.toISOString().split('T')[0],
     };
 
-    console.log("Form Data", jobData);
-
      try {
-    await axios.post('http://localhost:8080/api/jobs', jobData);
+    await axios.post('https://job-management-backend-8w1z.onrender.com/api/jobs', jobData);
     alert('Job created successfully!');
     navigate('/', { state: { refresh: true } });
   } catch (error) {
