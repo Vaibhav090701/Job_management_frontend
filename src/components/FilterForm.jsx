@@ -10,13 +10,11 @@ const FilterForm = ({ onFilter }) => {
   const { control, register } = useForm();
   const formData = useWatch({ control }); // watches all form fields
 
-
-  // Use watch subscription to avoid infinite loop
- useEffect(() => {
-  const filterData = { ...formData, salaryRange: `${salaryRange[0]}-${salaryRange[1]}` };
-  onFilter(filterData);
-}, [formData, salaryRange, onFilter]);
-
+  useEffect(() => {
+    const filterData = { ...formData, salaryRange: `${salaryRange[0]}-${salaryRange[1]}` };
+    console.log('Filter data being sent:', filterData); // Debug log
+    onFilter(filterData);
+  }, [formData, salaryRange, onFilter]);
 
   const formatSalaryRange = (range) => {
     const min = range[0] / 1000;
@@ -46,7 +44,7 @@ const FilterForm = ({ onFilter }) => {
             {...register('location')}
             className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
           >
-            <option value="" disable selected>Preferred Location</option>
+            <option value="" disabled selected>Preferred Location</option>
             <option value="Chennai">Chennai</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Pune">Pune</option>
@@ -64,7 +62,7 @@ const FilterForm = ({ onFilter }) => {
             {...register('jobType')}
             className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
           >
-            <option value="" disble selected>Job Type</option>
+            <option value="" disabled selected>Job Type</option>
             <option value="Internship">Internship</option>
             <option value="Full-time">Full-time</option>
             <option value="Part-time">Part-time</option>
@@ -77,7 +75,7 @@ const FilterForm = ({ onFilter }) => {
         {/* Salary Range Slider */}
         <div className="flex items-center space-x-3 px-3 flex-1">
           <div className="w-full">
-            <div className="flex justify-between items-center space-x-2  mb-5">
+            <div className="flex justify-between items-center space-x-2 mb-5">
               <label className="text-black font-bold">Salary Per Month</label>
               <span className="text-gray-600">{formatSalaryRange(salaryRange)}</span>
             </div>
