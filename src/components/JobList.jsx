@@ -52,7 +52,7 @@ const JobList = () => {
       })();
 
       const matches = matchesJobTitle && matchesLocation && matchesJobType && matchesSalaryRange;
-      console.log(`Job ${job.id} matches:`, matches, { jobTitle, location, jobType, salaryRange }); // Debug log
+      // Removed per-job console log to reduce noise
       return matches;
     });
 
@@ -61,7 +61,15 @@ const JobList = () => {
   }, [filters, jobs]);
 
   const applyFilters = (newFilters) => {
-    setFilters(newFilters);
+    // Only update filters if they have actually changed (shallow comparison)
+    if (
+      newFilters.jobTitle !== filters.jobTitle ||
+      newFilters.location !== filters.location ||
+      newFilters.jobType !== filters.jobType ||
+      newFilters.salaryRange !== filters.salaryRange
+    ) {
+      setFilters(newFilters);
+    }
   };
 
   return (
