@@ -16,7 +16,7 @@ const JobList = () => {
       .catch((error) => {
         setJobs([]);
       });
-  }, []);
+  }, [jobs]);
 
   useEffect(() => {
   // fetch filtered jobs when filters change
