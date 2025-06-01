@@ -8,17 +8,14 @@ const FilterForm = ({ onFilter }) => {
   const [salaryRange, setSalaryRange] = useState([0, 50000]);
 
   const { control, register } = useForm();
-const formData = useWatch({ control }); // watches all form fields
+  const formData = useWatch({ control }); // watches all form fields
 
 
   // Use watch subscription to avoid infinite loop
-  useEffect(() => {
-  const subscription = watch((formData) => {
-    const filterData = { ...formData, salaryRange: `${salaryRange[0]}-${salaryRange[1]}` };
-    onFilter(filterData);
-  });
-  return () => subscription.unsubscribe();
-}, [watch, salaryRange, onFilter]);
+ useEffect(() => {
+  const filterData = { ...formData, salaryRange: `${salaryRange[0]}-${salaryRange[1]}` };
+  onFilter(filterData);
+}, [formData, salaryRange, onFilter]);
 
 
   const formatSalaryRange = (range) => {
