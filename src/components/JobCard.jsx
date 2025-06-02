@@ -12,7 +12,7 @@ const JobCard = ({ job }) => {
         return 'https://logo.clearbit.com/amazon.com';
       case 'tesla':
         return 'https://logo.clearbit.com/tesla.com';
-      case 'spotify':
+      case 'swiggy':
         return 'https://logo.clearbit.com/swiggy.com';
       default:
         return 'https://logo.clearbit.com/example.com'; // Fallback logo
