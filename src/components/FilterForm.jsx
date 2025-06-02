@@ -3,6 +3,10 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { useState, useEffect } from 'react';
 import { FaSearch, FaMapMarkerAlt, FaBriefcase, FaMoneyBillWave } from 'react-icons/fa';
+import { CiLocationOn } from "react-icons/ci";
+import { CiSearch } from "react-icons/ci";
+import { BiUserVoice } from "react-icons/bi";
+
 
 const FilterForm = ({ onFilter }) => {
   const [salaryRange, setSalaryRange] = useState([0, 50000]);
@@ -19,7 +23,7 @@ const FilterForm = ({ onFilter }) => {
   const formatSalaryRange = (range) => {
     const min = range[0] / 1000;
     const max = range[1] / 1000;
-    return `${min}K to ${max}K`;
+    return `₹${min}k - ₹${max}k`;
   };
 
   return (
@@ -27,7 +31,7 @@ const FilterForm = ({ onFilter }) => {
       <div className="flex items-center space-x-6 flex-wrap gap-8">
         {/* Job Title Filter */}
         <div className="flex items-center space-x-2">
-          <FaSearch className="text-gray-600" />
+          <CiSearch className="text-gray-600 text-2xl" />
           <input
             {...register('jobTitle')}
             placeholder="Search By Job Title, Role"
@@ -39,12 +43,13 @@ const FilterForm = ({ onFilter }) => {
 
         {/* Location Filter */}
         <div className="flex items-center space-x-2">
-          <FaMapMarkerAlt className="text-gray-600" />
+         
+          <CiLocationOn className="text-gray-600 text-2xl" />
           <select
             {...register('location')}
-            className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
+            className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48 text-gray-500"
           >
-            <option value="" disabled selected>Preferred Location</option>
+            <option value="">Preferred Location</option>
             <option value="Chennai">Chennai</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Pune">Pune</option>
@@ -57,12 +62,12 @@ const FilterForm = ({ onFilter }) => {
 
         {/* Job Type Filter */}
         <div className="flex items-center space-x-2">
-          <FaBriefcase className="text-gray-600" />
+          <BiUserVoice className="text-gray-600 text-2xl" />
           <select
             {...register('jobType')}
-            className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48"
+            className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-48 text-gray-500"
           >
-            <option value="" disabled selected>Job Type</option>
+            <option value="">Job Type</option>
             <option value="Internship">Internship</option>
             <option value="Full-time">Full-time</option>
             <option value="Part-time">Part-time</option>
@@ -77,7 +82,7 @@ const FilterForm = ({ onFilter }) => {
           <div className="w-full">
             <div className="flex justify-between items-center space-x-2 mb-5">
               <label className="text-black font-bold">Salary Per Month</label>
-              <span className="text-gray-600">{formatSalaryRange(salaryRange)}</span>
+              <span className="text-black font-bold">{formatSalaryRange(salaryRange)}</span>
             </div>
             <Slider
               range
